@@ -3,6 +3,7 @@ from . models import *
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib import messages
 from django.contrib import auth
+from django.db.models import Q
 
 # Create your views here.
 def index(request):
@@ -208,3 +209,18 @@ def update_course_page(request,uid):
     return render(request, 'update_course.html', context={
         'stu': res,
     })
+
+def search_student(request):
+    find=request.POST['find']
+    s=Student.objects.filter(Q(Email=find) | Q(Name=find) | Q(College=find) | Q(Degree=find)).all()
+    return render(request,'viewstudents.html',{'s_data':s})
+
+def search_course(request):
+    find=request.POST['find']
+    s=Course.objects.filter(Q(Name=find) | Q(Duration=find) | Q(TextField=find)).all()
+    return render(request,'course.html',{'data':s})
+
+def search_teacher(request):
+    find=request.POST['find']
+    s=Teacher.objects.filter(Q(Name=find) | Q(Emp_Id=find) | Q(Email=find) | Q(Joining_Date=find) | Q(Education=find)).all()
+    return render(request,'teacher.html',{'t_data':s})

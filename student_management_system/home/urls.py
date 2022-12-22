@@ -18,8 +18,11 @@ urlpatterns = [
     path('add_teacher',views.add_teacher, name='add_teacher'),
     path("update_teacher",views.update_teacher, name='update_teacher'),
     path("delete_teacher",views.delete_teacher, name='delete_teacher'),
-    path("update_teacher_page/<int:uid>/",views.update_teacher_page),
-    path("update_student_page/<int:uid>/",views.update_student_page),
-    path("update_course_page/<int:uid>/",views.update_course_page)
+    path("update_teacher_page/<int:uid>/",views.update_teacher_page, name='update_teacher_page'),
+    path("update_student_page/<int:uid>/",views.update_student_page, name='update_teacher_page'),
+    path("update_course_page/<int:uid>/",views.update_course_page, name='update_teacher_page'),
+    path("search_student",views.search_student, name='search_student'),
+    path("search_course",views.search_course, name='search_course'),
+    path("search_teacher",views.search_teacher, name='search_teacher'),
 
 ]

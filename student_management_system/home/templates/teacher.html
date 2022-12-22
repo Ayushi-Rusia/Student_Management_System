@@ -158,13 +158,27 @@
               <div class="text-end pt-1">
                 <a class="btn bg-gradient-dark mb-0" href="javascript:;" data-bs-toggle="modal"
                   data-bs-target="#exampleModal"><i class="material-icons text-sm">add</i>Add Teachers</a>
+
+            <div style="padding-left:740px";>
+            <div class="input-group mx-5 " style='padding-left: 15px;'>
+              <div class="form-outline">
+                <form action="search_teacher" method="POST">
+                  {%csrf_token%}
+                <input type="search" id="form1" name="find" class="form-control border" />
+                <label class="form-label" for="form1"></label>
               </div>
-               <div class="text-end pt-1">
-                <a class="btn bg-gradient-dark mb-0" href="javascript:;" data-bs-toggle="modal"
-                  data-bs-target="#UpdateModal"><i class="material-icons text-sm">add</i>Update</a>
-              </div>
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+              </form>
+              </button>
             </div>
-            
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      </div>
           </div>
         </div>
 

@@ -139,7 +139,20 @@
                     class="material-icons text-sm">add</i>&nbsp;&nbsp;Add New Courses</a>
               </div>
             </div>
-
+            <div style="padding-left:760px";>
+            <div class="input-group mx-5 ">
+              <div class="form-outline">
+                <form action="search_course" method="POST">
+                  {%csrf_token%}
+                <input type="search" id="form1" name="find" class="form-control border" />
+                <label class="form-label" for="form1"></label>
+                </form>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+            </div>
           </div>
         </div>
 
